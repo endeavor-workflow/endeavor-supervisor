@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endeavor.Supervisor", "Endeavor.Supervisor\Endeavor.Supervisor.csproj", "{E4B7F536-F9F4-460D-85EC-33EBA3F6AB77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endeavor.Supervisor.Service", "Endeavor.Supervisor.Service\Endeavor.Supervisor.Service.csproj", "{DC46438B-EE67-4FE3-9959-89D01018C821}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4B7F536-F9F4-460D-85EC-33EBA3F6AB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B7F536-F9F4-460D-85EC-33EBA3F6AB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B7F536-F9F4-460D-85EC-33EBA3F6AB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B7F536-F9F4-460D-85EC-33EBA3F6AB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC46438B-EE67-4FE3-9959-89D01018C821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC46438B-EE67-4FE3-9959-89D01018C821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC46438B-EE67-4FE3-9959-89D01018C821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC46438B-EE67-4FE3-9959-89D01018C821}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72EAE991-4643-43FC-A50E-E39B5FE00D35}
+	EndGlobalSection
+EndGlobal

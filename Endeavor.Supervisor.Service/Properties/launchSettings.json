@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Endeavor.Supervisor.Service": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
