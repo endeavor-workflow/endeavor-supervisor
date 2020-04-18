@@ -2,9 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Threading.Tasks;
-using Dapper;
 using System.Text;
+using Keryhe.Persistence;
 
 namespace Endeavor.Supervisor.Persistence
 {
@@ -21,14 +20,21 @@ namespace Endeavor.Supervisor.Persistence
         {
             string query = "SELECT t.ID AS TaskId, t.StepID, s.StepType FROM Task t INNER JOIN Step s ON s.ID = t.StepID WHERE t.StatusValue = @Status";
 
-            var parameters = new DynamicParameters();
+            var parameters = new Dictionary<string,object>();
             parameters.Add("@Status", (int)status);
 
             using (var conn = _factory.Connection)
             {
-                var tasks = conn.Query<TaskToBeWorked>(query, parameters, commandType: CommandType.Text);
+                List<TaskToBeWorked> tasks = new List<TaskToBeWorked>();
 
-                return tasks.AsList<TaskToBeWorked>();
+                var results = conn.ExecuteQuery(query, CommandType.Text, parameters);
+                foreach(Dictionary<string, object> result in results)
+                {
+                    TaskToBeWorked task = new TaskToBeWorked(result);
+                    tasks.Add(task);
+                }
+
+                return tasks;
             }       
         }
 
@@ -46,7 +52,7 @@ namespace Endeavor.Supervisor.Persistence
 
             using (var conn = _factory.Connection)
             {
-                conn.Execute(sb.ToString(), commandType: CommandType.Text);
+                conn.ExecuteNonQuery(sb.ToString(), CommandType.Text);
             }
         }
 
@@ -61,7 +67,7 @@ namespace Endeavor.Supervisor.Persistence
 
             using (var conn = _factory.Connection)
             {
-                conn.Execute(sb.ToString(), commandType: CommandType.Text);
+                conn.ExecuteNonQuery(sb.ToString(), CommandType.Text);
             }
         }
     }
